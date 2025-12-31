@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>2026 💖 Diana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at top, #2a001c, #07000a);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .rose {
+            position: fixed;
+            font-size: clamp(22px,4vw,45px);
+            opacity: 0.18;
+            animation: rise 25s linear infinite;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(110vh) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-15vh) rotate(360deg);
+            }
+        }
+
+        .flower {
+            position: fixed;
+            font-size: clamp(18px,3vw,35px);
+            opacity: 0.3;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        .card {
+            background: rgba(20,0,15,0.75);
+            padding: 2.5rem;
+            border-radius: 30px;
+            text-align: center;
+            width: 92%;
+            max-width: 520px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 60px rgba(255,80,160,0.45);
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: clamp(2.6rem,6vw,3.4rem);
+            color: #ff9ad5;
+            text-shadow: 0 0 10px #ff5fa2, 0 0 20px #ff5fa2, 0 0 40px #ff2f7d;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: clamp(1.3rem,4vw,1.6rem);
+            color: #ffd1ea;
+            text-shadow: 0 0 12px #ff7bbf;
+            margin-bottom: 1.8rem;
+        }
+
+        .message {
+            display: none;
+            margin-top: 1.5rem;
+            font-size: clamp(1.2rem,4vw,1.5rem);
+            color: #ffe3f2;
+            line-height: 1.6;
+            text-shadow: 0 0 10px #ff8dcf, 0 0 25px #ff5fa2;
+        }
+
+        button {
+            padding: 14px 26px;
+            margin: 10px;
+            border: none;
+            border-radius: 40px;
+            background: linear-gradient(135deg,#ff5fa2,#ff2f7d);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: .3s;
+            box-shadow: 0 0 20px rgba(255,95,162,0.6);
+        }
+
+            button:hover {
+                transform: scale(1.1);
+                box-shadow: 0 0 35px rgba(255,95,162,1);
+            }
+
+        .heart {
+            position: fixed;
+            font-size: 24px;
+            animation: heartFall 4s linear forwards;
+        }
+
+        @keyframes heartFall {
+            0% {
+                transform: translateY(-10vh);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+
+        .firework {
+            position: fixed;
+            animation: explode 2.8s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(3.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card" id="card">
+        <h1>✨ Feliz 2026 ✨</h1>
+        <div class="subtitle">TE QUIERO MUCHO<br><strong>Diana 🌹</strong></div>
+
+        <button onclick="mostrarMensaje()">💌 Mensaje</button>
+        <button onclick="amor()">TOCA AQUI ❤️</button>
+
+        <div class="message" id="mensaje">
+            Diana, este nuevo año me gustaría seguir compartiendo momentos contigo.
+            Que el 2026 nos encuentre conociéndonos más,
+            conversando, riendo y disfrutando cada salida.
+            No sé qué nos depare el futuro,
+            pero me ilusiona descubrirlo paso a paso contigo ❤️🌹
+        </div>
+    </div>
+
+    <script>
+        /* ROSAS FONDO */
+        for (let i = 0; i < 18; i++) {
+            let r = document.createElement("div");
+            r.className = "rose";
+            r.innerHTML = "🌹";
+            r.style.left = Math.random() * 100 + "vw";
+            r.style.animationDuration = (Math.random() * 15 + 20) + "s";
+            document.body.appendChild(r);
+        }
+
+        /* FLORES */
+        setInterval(() => {
+            let f = document.createElement("div");
+            f.className = "flower";
+            f.innerHTML = "🌸";
+            f.style.left = Math.random() * 100 + "vw";
+            document.body.appendChild(f);
+            setTimeout(() => f.remove(), 10000);
+        }, 800);
+
+        function mostrarMensaje() {
+            document.getElementById("mensaje").style.display = "block";
+        }
+
+        /* CLICK TOCA AQUI ❤️ (REEMPLAZA AMOR) */
+        function amor() {
+            // 🎵 REPRODUCIR MÚSICA
+            const musica = document.getElementById("musica");
+            musica.volume = 0.6;
+            musica.play();
+
+            // 🔥 OCULTAR TODO LO ANTERIOR
+            document.getElementById("card").style.display = "none";
+
+            /* 2026 GRANDE */
+            const year = document.createElement("div");
+            year.innerHTML = "2026";
+            year.style.position = "fixed";
+            year.style.top = "50%";
+            year.style.left = "50%";
+            year.style.transform = "translate(-50%, -50%)";
+            year.style.fontSize = "clamp(7rem, 22vw, 18rem)";
+            year.style.color = "#ff7fcf";
+            year.style.zIndex = "999";
+            year.style.textAlign = "center";
+            year.style.textShadow = `
+            0 0 30px #ff5fa2,
+            0 0 80px #ff2f7d,
+            0 0 140px #ff2f7d
+        `;
+            document.body.appendChild(year);
+
+            /* FUEGOS ARTIFICIALES */
+            const fireworks = ["🎆", "🎇", "✨", "💥"];
+            for (let i = 0; i < 60; i++) {
+                let f = document.createElement("div");
+                f.className = "firework";
+                f.innerHTML = fireworks[Math.floor(Math.random() * fireworks.length)];
+                f.style.left = Math.random() * 100 + "vw";
+                f.style.top = Math.random() * 100 + "vh";
+                f.style.fontSize = (Math.random() * 60 + 40) + "px";
+                document.body.appendChild(f);
+                setTimeout(() => f.remove(), 3000);
+            }
+
+            /* CONTENEDOR DE FRASES */
+            const frase = document.createElement("div");
+            frase.style.position = "fixed";
+            frase.style.bottom = "18%";
+            frase.style.left = "50%";
+            frase.style.transform = "translateX(-50%)";
+            frase.style.fontSize = "clamp(1.8rem, 4vw, 2.6rem)";
+            frase.style.color = "#ffe3f2";
+            frase.style.textAlign = "center";
+            frase.style.zIndex = "1000";
+            frase.style.textShadow = "0 0 20px #ff5fa2, 0 0 40px #ff2f7d";
+            frase.style.opacity = "0";
+            frase.style.transition = "opacity 2s";
+            document.body.appendChild(frase);
+
+            /* FRASES */
+            const frases = [
+                "Diana, este 2026 quiero seguir conociéndote más, sin prisas, disfrutando cada momento juntos ✨",
+                "Gracias por cada sonrisa, cada charla y cada instante compartido 💖",
+                "GRACIAS POR ESTAR CONMIGO SIEMPRE"
+            ];
+
+            /* MOSTRAR FRASES CON TIEMPOS */
+            setTimeout(() => {
+                frase.innerHTML = frases[0];
+                frase.style.opacity = "1";
+
+                setTimeout(() => {
+                    frase.style.opacity = "0";
+
+                    setTimeout(() => {
+                        frase.innerHTML = frases[1];
+                        frase.style.opacity = "1";
+
+                        setTimeout(() => {
+                            frase.style.opacity = "0";
+
+                            setTimeout(() => {
+                                frase.innerHTML = frases[2];
+                                frase.style.opacity = "1";
+                            }, 2000);
+
+                        }, 20000);
+
+                    }, 2000);
+
+                }, 20000);
+
+            }, 6000);
+
+            /* CORAZONES */
+            for (let i = 0; i < 30; i++) {
+                let h = document.createElement("div");
+                h.className = "heart";
+                h.innerHTML = "💖";
+                h.style.left = Math.random() * 100 + "vw";
+                document.body.appendChild(h);
+                setTimeout(() => h.remove(), 4000);
+            }
+
+            /* ROSAS LATERALES */
+            for (let i = 0; i < 20; i++) {
+                let r = document.createElement("div");
+                r.className = "rose";
+                r.innerHTML = "🌹";
+                r.style.fontSize = (Math.random() * 12 + 14) + "px";
+                r.style.left = Math.random() > 0.5 ? "2vw" : "95vw";
+                r.style.top = Math.random() * 100 + "vh";
+                document.body.appendChild(r);
+                setTimeout(() => r.remove(), 5000);
+            }
+        }
+    </script>
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+
+</body>
+</html>
