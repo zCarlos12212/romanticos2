@@ -308,8 +308,15 @@
         <source src="ORIGIWEB/musica.mp3" type="audio/mpeg">
         Tu navegador no soporta audio.
     </audio>
+    <script>
+    // Esto nos avisará si el archivo no se encuentra
+    document.getElementById('musica').children[0].addEventListener('error', function() {
+        alert("Error: No se pudo encontrar el archivo musica.mp3 en la carpeta ORIGIWEB. Revisa mayúsculas y minúsculas.");
+    });
+</script>
 
 
 </body>
 </html>
+
 
